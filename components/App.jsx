@@ -17,7 +17,10 @@ class App extends Component {
                dispatch(addTodo(text))}
             />
 
-            <TodoList todos = {todos}/>
+            <TodoList
+              todos = {todos}
+              dispatch = {dispatch}
+              />
 
          </div>
       )

@@ -4,8 +4,18 @@ export default class Todo extends Component {
    render() {
       return (
          <li>
-            {this.props.text}
+           <button
+             onClick = {(e) => this.handleClick(this.props.id)}
+             >
+              x
+           </button>
+           &nbsp;
+           {this.props.text}
          </li>
       )
    }
+
+    handleClick(id) {
+       this.props.onRemoveClick(id);
+    }
 }
