@@ -7,7 +7,7 @@ import TodoList from './TodoList.jsx'
 
 class App extends Component {
    render() {
-      const { dispatch, visibleTodos } = this.props
+      const { dispatch, todos } = this.props
 
       return (
          <div>
@@ -17,7 +17,7 @@ class App extends Component {
                dispatch(addTodo(text))}
             />
 
-            <TodoList todos = {visibleTodos}/>
+            <TodoList todos = {todos}/>
 
          </div>
       )
@@ -26,7 +26,7 @@ class App extends Component {
 
 function select(state) {
    return {
-      visibleTodos: state.todos
+      todos: state.todos
    }
 }
 
