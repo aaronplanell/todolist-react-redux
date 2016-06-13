@@ -33,7 +33,6 @@ function todos(state = [], action) {
           ];
         }
         else {
-          console.log('Return state');
           return state;
         }
 
