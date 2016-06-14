@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { ADD_TODO, REMOVE_TODO } from '../actions/actions'
+import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../actions/actions'
 
 function todo(state, action) {
    switch (action.type) {
@@ -8,7 +8,21 @@ function todo(state, action) {
          return {
             id: action.id,
             text: action.text,
+            isCompleted: false,
+            caca: "caca"
          }
+
+     case TOGGLE_TODO:
+       //Here the state is the individual todo, no de todo list.
+       if (state.id !== action.id) {
+         return state;
+       } else {
+         //Returns the same todo but with the isCompleted flag flipped
+         return {
+             ...state,
+             isCompleted: !state.isCompleted
+         };
+       }
 
       default:
       return state
@@ -36,8 +50,12 @@ function todos(state = [], action) {
           return state;
         }
 
+      case TOGGLE_TODO:
+        //Returns a new array. One item it's a new copy and it's toggled.
+        return state.map(t => todo(t, action));
+
       default:
-      return state
+        return state
    }
 }
 
