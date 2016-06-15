@@ -5,9 +5,9 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
 import App from '../components/App.jsx'
-import todoApp from '../reducers/reducers'
+import root from '../reducers/root'
 
-let store = createStore(todoApp, window.devToolsExtension ? window.devToolsExtension() : f => f);
+let store = createStore(root, window.devToolsExtension ? window.devToolsExtension() : f => f);
 
 let rootElement = document.getElementById('app')
 
