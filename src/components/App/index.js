@@ -7,7 +7,7 @@ import TodoList from './TodoList'
 
 class App extends Component {
    render() {
-      const { dispatch, todos } = this.props
+      const { dispatch, todoList } = this.props
 
       return (
          <div>
@@ -17,7 +17,7 @@ class App extends Component {
                dispatch(addTodo(text))}
             />
             <TodoList
-              todos = {todos}
+              todoList = {todoList}
               dispatch = {dispatch}
               />
 
@@ -27,9 +27,9 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  const todos = state.todos;
+  const todoList = state.todoList;
    return {
-      todos: state.todos
+      todoList: state.todoList
    }
 }
 
