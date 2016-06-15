@@ -2,14 +2,23 @@ import React, { Component, PropTypes } from 'react'
 
 export default class AddTodo extends Component {
    render() {
+     var divStyle = {
+       margin: 5,
+       padding: 5
+     };
       return (
-         <div>
-            <input type = 'text' ref = 'input' />
-				
-            <button onClick = {(e) => this.handleClick(e)}>
+         <div style={divStyle} className="form-group">
+            <label for="comment">Insert the a new task: &nbsp;</label>
+            <input type = 'text' ref = 'input'
+              className = 'form-inline'
+              />
+            &nbsp;
+            <button
+              onClick = {(e) => this.handleClick(e)}
+              className = 'btn btn-sm btn-default'
+              >
                Add
             </button>
-				
          </div>
       )
    }

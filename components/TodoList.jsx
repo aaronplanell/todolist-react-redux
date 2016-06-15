@@ -6,8 +6,14 @@ import Todo from './Todo.jsx'
 
 export default class TodoList extends Component {
    render() {
+     var ulStyle = {
+       listStyleType: 'none',
+       margin: 5,
+       padding: 5       
+     };
       return (
-         <ul>
+        <div>
+          <ul style={ulStyle}>
             {this.props.todos.map(todo =>
                <Todo
                  onRemoveClick = {id => this.props.dispatch(removeTodo(id))}
@@ -16,7 +22,8 @@ export default class TodoList extends Component {
                  {...todo}
                />
             )}
-         </ul>
+          </ul>
+       </div>
       )
    }
 }
