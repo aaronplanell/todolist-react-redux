@@ -1,15 +1,18 @@
-import React from 'react'
+import React from 'react';
 
-import { render } from 'react-dom'
-import { createStore } from 'redux'
-import { Provider } from 'react-redux'
+import { render } from 'react-dom';
+import { combineReducers, createStore } from 'redux';
+import { Provider } from 'react-redux';
 
-import App from './components/App.jsx'
-import root from './reducers/root'
+import App from './components/App';
+import * as reducers from './reducers';
 
-let store = createStore(root, window.devToolsExtension ? window.devToolsExtension() : f => f);
+const reducer = combineReducers({
+  ...reducers
+})
+let store = createStore(reducer, window.devToolsExtension ? window.devToolsExtension() : f => f);
 
-let rootElement = document.getElementById('app')
+let rootElement = document.getElementById('app');
 
 render(
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addTodo } from '../actions/actions'
+import { addTodo } from '../../actions'
 
-import AddTodo from './AddTodo.jsx'
-import TodoList from './TodoList.jsx'
+import AddTodo from './AddTodo'
+import TodoList from './TodoList'
 
 class App extends Component {
    render() {
@@ -26,10 +26,11 @@ class App extends Component {
    }
 }
 
-function select(state) {
+function mapStateToProps(state) {
+  const todos = state.todos;
    return {
       todos: state.todos
    }
 }
 
-export default connect(select)(App)
+export default connect(mapStateToProps)(App)

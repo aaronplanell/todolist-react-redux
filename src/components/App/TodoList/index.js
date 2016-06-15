@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { removeTodo, toggleTodo } from '../actions/actions'
+import { removeTodo, toggleTodo } from '../../../actions'
 
-import Todo from './Todo.jsx'
+import Todo from './Todo'
 
 export default class TodoList extends Component {
    render() {
      var ulStyle = {
        listStyleType: 'none',
        margin: 5,
-       padding: 5       
+       padding: 5
      };
       return (
         <div>
