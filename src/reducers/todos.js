@@ -1,7 +1,7 @@
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../../actions'
+import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../actions'
 import { todo } from './todo'
 
-export function todoList(state = [], action) {
+export function todos(state = [], action) {
    switch (action.type) {
 
       case ADD_TODO:

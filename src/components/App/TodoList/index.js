@@ -14,7 +14,7 @@ export default class TodoList extends Component {
       return (
         <div>
           <ul style={ulStyle}>
-            {this.props.todoList.map(todo =>
+            {this.props.todos.map(todo =>
                <Todo
                  onRemoveClick = {id => this.props.dispatch(removeTodo(id))}
                  onToggleClick = {id => this.props.dispatch(toggleTodo(id))}
