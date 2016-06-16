@@ -11,3 +11,5 @@ export function filter (
       return state;
   }
 };
+
+export default filter

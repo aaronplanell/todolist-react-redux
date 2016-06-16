@@ -26,3 +26,5 @@ export function todo(state, action) {
       return state
    }
 }
+
+export default todo

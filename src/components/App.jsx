@@ -36,7 +36,7 @@ class App extends Component {
       const { dispatch, todoList, filter } = this.props
 
       return (
-         <div>
+        <div>
 
             <AddTodo
                onAddClick = {text =>
@@ -51,7 +51,7 @@ class App extends Component {
                dispatch(setFilter(filter))}
             />
 
-         </div>
+        </div>
       )
    }
 }

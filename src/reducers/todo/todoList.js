@@ -42,3 +42,5 @@ function getIndexTodoById(state, id) {
     };
   return (indexToDelete);
  }
+
+export default todoList
