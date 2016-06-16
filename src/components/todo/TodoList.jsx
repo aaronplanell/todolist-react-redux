@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { removeTodo, toggleTodo } from '../actions/actions'
+import { removeTodo, toggleTodo } from '../../actions/actions'
 
 import Todo from './Todo.jsx'
 
@@ -9,7 +9,7 @@ export default class TodoList extends Component {
      var ulStyle = {
        listStyleType: 'none',
        margin: 5,
-       padding: 5       
+       padding: 5
      };
       return (
         <div>
