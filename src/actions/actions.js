@@ -1,6 +1,7 @@
 export const ADD_TODO = 'ADD_TODO'
 export const REMOVE_TODO = 'REMOVE_TODO'
 export const TOGGLE_TODO = 'TOGGLE_TODO'
+export const SET_FILTER = 'SET_FILTER'
 
 let nextTodoId = 0;
 
@@ -8,7 +9,6 @@ export function addTodo(text) {
    return {
       type: ADD_TODO,
       id: nextTodoId++,
-      finished: false,
       text
    };
 }
@@ -26,3 +26,10 @@ export function toggleTodo(id) {
       id
    };
 }
+
+export function setFilter(filter) {
+  return {
+    type: 'SET_FILTER',
+    filter
+  };
+};
