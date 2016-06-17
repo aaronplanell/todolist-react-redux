@@ -29,7 +29,7 @@ export function toggleTodo(id) {
 
 export function setFilter(filter) {
   return {
-    type: 'SET_FILTER',
+    type: SET_FILTER,
     filter
   };
 };

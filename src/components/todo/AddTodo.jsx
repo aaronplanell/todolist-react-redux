@@ -24,7 +24,9 @@ class AddTodo extends Component {
             const { dispatch } = this.props;
             const node = this.refs.input;
             const text = node.value.trim();
-            if (text !== '') dispatch(addTodo(text))
+            if (text !== '') {
+              dispatch(addTodo(text));
+            }
             node.value = '';
           }}
           className = 'btn btn-sm btn-default'

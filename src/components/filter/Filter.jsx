@@ -55,6 +55,11 @@ class Filter extends Component {
   }
 }
 
+//Make it reusable
+Filter.propTypes = {
+  filter: PropTypes.string.isRequired
+};
+
 const mapStateToProps = (state) => {
   return {
     filter: state.filter
