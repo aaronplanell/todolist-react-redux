@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import { addTodo } from '../../actions/actions';
+
 class AddTodo extends Component {
 
   render() {
@@ -18,7 +20,13 @@ class AddTodo extends Component {
           />
         &nbsp;
         <button
-          onClick = {(e) => this.handleClick(e)}
+          onClick = {(e) => {
+            const { dispatch } = this.props;
+            const node = this.refs.input;
+            const text = node.value.trim();
+            if (text !== '') dispatch(addTodo(text))
+            node.value = '';
+          }}
           className = 'btn btn-sm btn-default'
           >
           Add
@@ -27,17 +35,6 @@ class AddTodo extends Component {
     )
   };
 
-  handleClick(e) {
-    const node = this.refs.input;
-    const text = node.value.trim();
-    if (text !== '') this.props.onAddClick(text);
-    node.value = '';
-  };
-};
-
-//Make it reusable
-AddTodo.propTypes = {
-  onAddClick: PropTypes.func.isRequired
 };
 
 export default connect()(AddTodo);

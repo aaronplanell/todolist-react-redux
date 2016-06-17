@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { removeTodo, toggleTodo } from '../../actions/actions';
 
 import Todo from './Todo.jsx';
 
@@ -8,7 +7,7 @@ class TodoList extends Component {
 
   render() {
 
-    const { dispatch } = this.props;
+    const { todoList } = this.props;
 
     var inlineStyle = {
       listStyleType: 'none',
@@ -19,10 +18,8 @@ class TodoList extends Component {
     return (
       <div>
         <ul style={inlineStyle}>
-          {this.props.todoList.map(todo =>
+          {todoList.map(todo =>
             <Todo
-              onRemoveClick = {id => dispatch(removeTodo(id))}
-              onToggleClick = {id => dispatch(toggleTodo(id))}
               key = {todo.id}
               {...todo}
               />
@@ -45,7 +42,6 @@ TodoList.propTypes = {
     .isRequired)
     .isRequired
 };
-
 TodoList.defaultProps = { todoList: [] };
 
 /*

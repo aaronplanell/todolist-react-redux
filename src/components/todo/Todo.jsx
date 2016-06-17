@@ -1,15 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import { removeTodo, toggleTodo } from '../../actions/actions';
+
 class Todo extends Component {
 
   render() {
 
-    const { dispatch } = this.props;
+    const { dispatch, id, text, isCompleted } = this.props;
 
     let classToggle = 'btn btn-sm btn-primary';
     let classTask   = 'alert alert-info';
-    if (this.props.isCompleted) {
+    if (isCompleted) {
       classToggle = 'btn btn-sm btn-success';
       classTask   = 'alert alert-success';
     };
@@ -20,7 +22,7 @@ class Todo extends Component {
         {/* Remove task button */}
         &nbsp;
         <button
-          onClick = {(e) => this.onRemoveClick(this.props.id)}
+          onClick = {(e) => dispatch(removeTodo(id))}
           className = 'btn btn-sm btn-danger'
           >
           Delete
@@ -29,7 +31,7 @@ class Todo extends Component {
         {/* Toogle task button */}
         &nbsp;
         <button
-          onClick = {(e) => this.onToggleClick(this.props.id)}
+          onClick = {(e) => dispatch(toggleTodo(id))}
           className = {classToggle}
           >
           Toggle
@@ -38,19 +40,11 @@ class Todo extends Component {
         {/* The description of the task */}
         &nbsp;
         <div className = {classTask}>
-          {this.props.text}
+          {text}
         </div>
 
       </li>
     );
-  };
-
-  onRemoveClick(id) {
-    this.props.onRemoveClick(id);
-  };
-
-  onToggleClick(id) {
-    this.props.onToggleClick(id);
   };
 }
 
@@ -58,11 +52,8 @@ class Todo extends Component {
 Todo.propTypes = {
   id: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired,
-  isCompleted: PropTypes.bool.isRequired,
-  onRemoveClick: PropTypes.func.isRequired,
-  onToggleClick: PropTypes.func.isRequired
+  isCompleted: PropTypes.bool.isRequired
 };
-
 Todo.defaultProps = { isCompleted: false };
 
 export default connect()(Todo);
