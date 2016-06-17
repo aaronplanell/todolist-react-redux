@@ -4,8 +4,8 @@ import filter from '../../src/reducers/filter/filter'
 describe('filter reducer', () => {
 
   /*
-   * Check initial state
-   ***/
+  * Check initial state
+  ***/
   it('should handle initial state', () => {
     expect(
       filter(undefined, {})
@@ -14,9 +14,9 @@ describe('filter reducer', () => {
 
 
   /*
-   * Change the filter
-   ***/
-  it('should handle initial state', () => {
+  * Change the filter
+  ***/
+  it('should handle SET_FILTER', () => {
     expect(
       filter('SHOW_ALL', {
         type: 'SET_FILTER',

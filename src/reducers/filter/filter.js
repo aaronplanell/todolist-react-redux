@@ -1,15 +1,17 @@
-import { SET_FILTER } from '../../actions/actions'
+import { SET_FILTER } from '../../actions/actions';
 
 export function filter (
   state = 'SHOW_ALL', //The default initial state is SHOW_ALL
   action
 ) {
   switch (action.type) {
+
     case 'SET_FILTER':
-      return action.filter;
+    return action.filter;
+
     default:
-      return state;
-  }
+    return state;
+  };
 };
 
-export default filter
+export default filter;

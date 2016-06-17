@@ -1,47 +1,63 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react';
 
 export default class Todo extends Component {
-   render() {
 
-      let classToggle = 'btn btn-sm btn-primary';
-      let classTask   = 'alert alert-info';
-      if (this.props.isCompleted) {
-        classToggle = 'btn btn-sm btn-success';
-        classTask   = 'alert alert-success';
-      }
+  render() {
 
-      return (
-         <li className = 'list-group'>
+    let classToggle = 'btn btn-sm btn-primary';
+    let classTask   = 'alert alert-info';
+    if (this.props.isCompleted) {
+      classToggle = 'btn btn-sm btn-success';
+      classTask   = 'alert alert-success';
+    };
 
-           <button
-             onClick = {(e) => this.onRemoveClick(this.props.id)}
-             className = 'btn btn-sm btn-danger'
-             >
-              Delete
-           </button>
+    return (
+      <li className = 'list-group'>
 
-           &nbsp;
-           <button
-             onClick = {(e) => this.onToggleClick(this.props.id)}
-             className = {classToggle}
-             >
-              Toggle
-           </button>
+        {/* Remove task button */}
+        &nbsp;
+        <button
+          onClick = {(e) => this.onRemoveClick(this.props.id)}
+          className = 'btn btn-sm btn-danger'
+          >
+          Delete
+        </button>
 
-           &nbsp;
-           <div className = {classTask}>
-             {this.props.text}
-           </div>
+        {/* Toogle task button */}
+        &nbsp;
+        <button
+          onClick = {(e) => this.onToggleClick(this.props.id)}
+          className = {classToggle}
+          >
+          Toggle
+        </button>
 
-         </li>
-      )
-   }
+        {/* The description of the task */}
+        &nbsp;
+        <div className = {classTask}>
+          {this.props.text}
+        </div>
 
-    onRemoveClick(id) {
-       this.props.onRemoveClick(id);
-    }
+      </li>
+    );
+  };
 
-    onToggleClick(id) {
-       this.props.onToggleClick(id);
-    }
+  onRemoveClick(id) {
+    this.props.onRemoveClick(id);
+  };
+
+  onToggleClick(id) {
+    this.props.onToggleClick(id);
+  };
 }
+
+//Make it reusable
+Todo.propTypes = {
+  id: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired,
+  isCompleted: PropTypes.bool.isRequired,
+  onRemoveClick: PropTypes.func.isRequired,
+  onToggleClick: PropTypes.func.isRequired
+};
+
+Todo.defaultProps = { isCompleted: false };

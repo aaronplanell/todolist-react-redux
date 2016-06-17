@@ -4,8 +4,8 @@ import todoList from '../../src/reducers/todo/todoList'
 describe('todoList reducer', () => {
 
   /*
-   * Check initial state
-   ***/
+  * Check initial state
+  ***/
   it('should handle initial state', () => {
     expect(
       todoList(undefined, {})
@@ -14,8 +14,8 @@ describe('todoList reducer', () => {
 
 
   /*
-   * Check ADD_TODO
-   ***/
+  * Check ADD_TODO
+  ***/
   it('should handle ADD_TODO', () => {
     expect(
       todoList([], {
@@ -90,8 +90,8 @@ describe('todoList reducer', () => {
 
 
   /*
-   * Check REMOVE_TODO
-   ***/
+  * Check REMOVE_TODO
+  ***/
   it('should handle REMOVE_TODO', () => {
     expect(
       todoList([
@@ -189,8 +189,8 @@ describe('todoList reducer', () => {
 
 
   /*
-   * Check TOGGLE_TODO
-   ***/
+  * Check TOGGLE_TODO
+  ***/
   it('should handle TOGGLE_TODO', () => {
     expect(
       todoList([

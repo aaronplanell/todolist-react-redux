@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux'
-import { todoList } from './todo/todoList'
-import { filter } from './filter/filter'
+import { combineReducers } from 'redux';
+import { todoList } from './todo/todoList';
+import { filter } from './filter/filter';
 
 const root = combineReducers({
-   todoList,
-   filter
+  todoList,
+  filter
 })
 
-export default root
+export default root;
