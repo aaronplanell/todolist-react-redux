@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../../actions/actions';
+import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../actions';
 import { todo } from './todo';
 
 export function todoList(state = [], action) {

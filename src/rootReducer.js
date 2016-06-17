@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { todoList } from './todo/todoList';
-import { filter } from './filter/filter';
+import { todoList } from './todoList/reducers/todoList';
+import { filter } from './filter/reducers/filter';
 
 const root = combineReducers({
   todoList,

@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { setFilter } from '../../actions/actions';
+import { setFilter } from '../actions';
 
 class Filter extends Component {
 

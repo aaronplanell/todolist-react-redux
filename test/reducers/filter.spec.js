@@ -1,5 +1,5 @@
 import expect from 'expect'
-import filter from '../../src/reducers/filter/filter'
+import filter from '../../src/filter/reducers/filter'
 
 describe('filter reducer', () => {
 

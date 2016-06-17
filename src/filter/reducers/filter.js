@@ -1,4 +1,4 @@
-import { SET_FILTER } from '../../actions/actions';
+import { SET_FILTER } from '../actions';
 
 export function filter (
   state = 'SHOW_ALL', //The default initial state is SHOW_ALL
