@@ -1,5 +1,5 @@
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../actions';
-import { todo } from '../todo/reducers/todo';
+import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from './actions';
+import { todo } from './todo/reducer';
 
 export function todoList(state = [], action) {
   switch (action.type) {

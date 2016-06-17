@@ -1,5 +1,5 @@
 import expect from 'expect'
-import todoList from '../../src/todoList/reducers/todoList'
+import todoList from '../../src/todoList/reducer'
 
 describe('todoList reducer', () => {
 
