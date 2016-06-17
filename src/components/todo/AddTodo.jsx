@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-export default class AddTodo extends Component {
+class AddTodo extends Component {
 
   render() {
 
@@ -40,4 +40,4 @@ AddTodo.propTypes = {
   onAddClick: PropTypes.func.isRequired
 };
 
-AddTodo = connect()(AddTodo);
+export default connect()(AddTodo);

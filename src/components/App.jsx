@@ -9,33 +9,6 @@ import Filter from './filter/Filter.jsx';
 
 class App extends Component {
 
-  /*
-   * Auxiliar function for apply the visibility
-   ***/
-  applyFilter (
-    todos,
-    filter
-  ) {
-    switch (filter) {
-
-      case 'SHOW_ALL':
-      return todos;
-
-      case 'SHOW_ACTIVE':
-      return todos.filter(
-        t => !t.isCompleted
-      );
-
-      case 'SHOW_COMPLETED':
-      return todos.filter(
-        t => t.isCompleted
-      );
-
-      default:
-      return todos;
-    };
-  };
-
   render() {
 
     const { dispatch, todoList, filter } = this.props;
@@ -48,8 +21,7 @@ class App extends Component {
         />
 
         <TodoList
-          todoList = {this.applyFilter(todoList, filter)}
-          dispatch = {dispatch}
+          todoList = {todoList}
         />
 
         <Filter

@@ -1,8 +1,11 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 
-export default class Todo extends Component {
+class Todo extends Component {
 
   render() {
+
+    const { dispatch } = this.props;
 
     let classToggle = 'btn btn-sm btn-primary';
     let classTask   = 'alert alert-info';
@@ -61,3 +64,5 @@ Todo.propTypes = {
 };
 
 Todo.defaultProps = { isCompleted: false };
+
+export default connect()(Todo);

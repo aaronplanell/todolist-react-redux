@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 
-export default class Filter extends Component {
+class Filter extends Component {
 
   render() {
 
@@ -8,7 +9,7 @@ export default class Filter extends Component {
       margin: 5,
       padding: 5
     };
-    
+
     return (
       <div style={inlineStyle} className="form-group">
 
@@ -46,3 +47,11 @@ export default class Filter extends Component {
     this.props.onSetFilter(filter);
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    filter: state.filter
+  };
+};
+
+export default connect(mapStateToProps)(Filter);

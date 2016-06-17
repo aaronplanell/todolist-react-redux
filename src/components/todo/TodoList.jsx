@@ -4,9 +4,11 @@ import { removeTodo, toggleTodo } from '../../actions/actions';
 
 import Todo from './Todo.jsx';
 
-export default class TodoList extends Component {
+class TodoList extends Component {
 
   render() {
+
+    const { dispatch } = this.props;
 
     var inlineStyle = {
       listStyleType: 'none',
@@ -19,8 +21,8 @@ export default class TodoList extends Component {
         <ul style={inlineStyle}>
           {this.props.todoList.map(todo =>
             <Todo
-              onRemoveClick = {id => this.props.dispatch(removeTodo(id))}
-              onToggleClick = {id => this.props.dispatch(toggleTodo(id))}
+              onRemoveClick = {id => dispatch(removeTodo(id))}
+              onToggleClick = {id => dispatch(toggleTodo(id))}
               key = {todo.id}
               {...todo}
               />
@@ -42,6 +44,41 @@ TodoList.propTypes = {
     })
     .isRequired)
     .isRequired
-  };
+};
 
-  TodoList.defaultProps = { todoList: [] };
+TodoList.defaultProps = { todoList: [] };
+
+/*
+ * Auxiliar function for apply the visibility
+ ***/
+const applyFilter = (
+  todos,
+  filter
+) => {
+  switch (filter) {
+
+    case 'SHOW_ALL':
+    return todos;
+
+    case 'SHOW_ACTIVE':
+    return todos.filter(
+      t => !t.isCompleted
+    );
+
+    case 'SHOW_COMPLETED':
+    return todos.filter(
+      t => t.isCompleted
+    );
+
+    default:
+    return todos;
+  };
+};
+
+const mapStateToProps = (state) => {
+  return {
+    todoList: applyFilter(state.todoList, state.filter)
+  };
+};
+
+export default connect(mapStateToProps)(TodoList);
