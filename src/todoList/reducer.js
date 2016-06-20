@@ -11,7 +11,7 @@ export function todoList(state = [], action) {
     ];
 
     case REMOVE_TODO:
-    let indexToDelete = getIndexTodoById(state, action.id);
+    let indexToDelete = state.map(t => {return t.id}).indexOf(action.id);
     if (indexToDelete !== null) {
       return [
         ...state.slice(0, indexToDelete),
@@ -30,17 +30,5 @@ export function todoList(state = [], action) {
     return state;
   };
 };
-
-/*
-* Auxiliar functions
-***/
-function getIndexTodoById(state, id) {
-  let indexToDelete = null;
-  for (var i = 0; i < state.length; i++) {
-    if (state[i].id === id)
-    indexToDelete = i;
-  };
-  return (indexToDelete);
-}
 
 export default todoList

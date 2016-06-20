@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { dispatch } from 'redux';
-import { connect } from 'react-redux';
 
 import AddTodo from './todoList/components/AddTodo.jsx';
 import TodoList from './todoList/components/TodoList.jsx';
@@ -18,4 +16,4 @@ class App extends Component {
   };
 };
 
-export default connect()(App);
+export default App;
