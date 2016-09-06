@@ -15,8 +15,8 @@
       "stage-2"
     ]
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["react", "redux", "hot reloading", "webpack"],
+  "author": "Aaron Planell",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.9.1",
