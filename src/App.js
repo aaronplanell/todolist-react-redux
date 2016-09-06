@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import AddTodo from './todoList/components/AddTodo.jsx';
-import TodoList from './todoList/components/TodoList.jsx';
-import Filter from './filter/components/Filter.jsx';
+import AddTodo from './todoList/components/AddTodo.js';
+import TodoList from './todoList/components/TodoList.js';
+import Filter from './filter/components/Filter.js';
 
 class App extends Component {
   render() {

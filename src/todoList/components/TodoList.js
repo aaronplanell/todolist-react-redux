@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import Todo from '../todo/components/Todo.jsx';
+import Todo from '../todo/components/Todo.js';
 
 class TodoList extends Component {
 

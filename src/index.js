@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import App from './App.jsx';
+import App from './App.js';
 import rootReducer from './rootReducer';
 
 let store = createStore(rootReducer, window.devToolsExtension ? window.devToolsExtension() : f => f);
